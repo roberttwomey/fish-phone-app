@@ -49,9 +49,8 @@
             "keywords": ["mike", "check", "test"]
         },
         "pause": {
-          "text": "Enter the phone booth and press button to begin",
-          // "next": ["path1", "path2", "path3", "path4"],
-          "next": ["begin"]
+          "text": "Enter the phone booth and press the button to begin",
+          "next": ["begin"],
           "keywords": ["pause"]
         },
         "waiting": {
