@@ -67,7 +67,7 @@ let offboardingtext;
 
 function preload() {
   // vid = createImg("clouds2.gif", "video of clouds", "anonymous", );
-  vid = createImg("assets/clouds2.gif");
+  vid = createImg("assets/birch.gif");
   vid.show();
   vid.parent("wallpaper");
 
