@@ -1,0 +1,133 @@
+{
+    "showtimes": [ "4:30", "5:30", "6:30"],
+    "story": {
+        "splash": {
+            "text": "",
+            "next": ["character"],
+            "keywords": ["splash"]
+        },
+        "character": {
+            "text": "Select your character:",
+            "next": ["preferences"],
+            "keywords": [""]
+        }, 
+        "preferences": {
+            "text": "Select your preferences:",
+            "next": ["mictest"],
+            "keywords": [""]
+        },
+        "mictest": {
+            "text": "Test your microphone. Say done when complete.",
+            "next": ["waiting"],
+            "keywords": ["mike", "check", "test"]
+        },
+        "waiting": {
+            "text": "Waiting for the experience to begin",
+            "next": ["onboarding"],
+            "keywords": ["done"]
+        },
+        "finish": {
+            "text": "Now we are done.",
+            "next": ["splash"],
+            "keywords": ["finish", "end", "exit"]
+        }, 
+        "radio": {
+            "type": "text",
+            "text": "HeraKlean Radio",
+            "next": [],
+            "keywords": ["radio"]
+        },
+        "onboarding": {
+            "type": "audio",
+            "audio": "assets/1.mp3",
+            "lat": 32.70444346073959,
+            "lng": -117.16358440260593,
+            "radius": 30,
+            "next": ["eucalyptus"]
+          },
+          "eucalyptus": {
+            "type": "audio",
+            "audio": "assets/2.mp3",
+            "lat": 32.70428740548589,
+            "lng": -117.16348707675935,
+            "radius": 30,
+            "next": ["resonate"]
+          },
+          "resonate": {
+            "type": "audio",
+            "audio": "assets/3.mp3",
+            "lat": 32.704136938772486,
+            "lng": -117.163408143133,
+            "radius": 30,
+            "label": "resonate",
+            "sounds": ["cranes.m4a"],
+            "next": ["boats"]
+          },
+          "boats": {
+            "type": "audio",
+            "audio": "assets/4.mp3",
+            "lat": 32.704165742420855,
+            "lng": -117.16306047783291,
+            "radius": 30,
+            "sounds": ["cattle_eating.mp3", "cowdrone.m4a"],
+            "next": ["meetaugus", "manure"]
+          },
+          "meetaugus": {
+            "type": "audio",
+            "audio": "assets/5.mp3",
+            "lat": 32.70381386410789,
+            "lng": -117.1627945560613,
+            "radius": 30,
+            "sounds": ["brook.mp3"],
+            "next": ["manure"]
+          },
+          "manure": { 
+            "type": "audio",
+            "audio": "assets/6.mp3",
+            "lat": 32.70364233121849, 
+            "lng": -117.16295037940655,
+            "radius": 30,
+            "next": ["refrigeration"]
+          },
+          "refrigeration": {             
+            "type": "audio",
+            "audio": "assets/7.mp3",
+            "lat": 32.703436405162336,
+            "lng": -117.16306584225097,
+            "radius": 30,
+            "next": ["tendthegrass"]
+          },
+          "tendthegrass": {
+            "type": "audio",
+            "audio": "assets/8.mp3", 
+            "lat": 32.703719, 
+            "lng": -117.163135,
+            "radius": 30,
+            "next": ["stableself"]
+          },
+          "stableself": { 
+            "type": "audio",
+            "audio": "assets/9.mp3",
+            "lat": 32.703923,
+            "lng": -117.16313,
+            "radius": 30,
+            "next": ["finalresonate"]
+          },
+          "finalresonate": {
+            "type": "audio",
+            "audio": "assets/10.mp3", 
+            "lat": 32.703993,
+            "lng": -117.163292,
+            "radius": 30,
+            "next": ["stableswag"]
+          },
+          "stableswag": {
+            "type": "audio",
+            "audio": "assets/11.mp3", 
+            "lat": 32.704192,
+            "lng": -117.163595,
+            "radius": 30,
+            "next": ["radio", "offboarding"]
+          }
+    }
+}
