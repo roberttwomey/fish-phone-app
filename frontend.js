@@ -72,10 +72,7 @@ function createCharSelector() {
   phonefield = createInput();
   phonefield.changed(phoneEntryEvent);
   phonefield.parent("contents");
-  phonefield.style("top", "180px");
-  phonefield.style("font-size", "16pt");
-  phonefield.style("margin-left", "20px");
-  phonefield.style("margin-right", "20px");
+  phonefield.style("top", "240px");
 
   chartext.hide();
   charsel.hide();
@@ -205,6 +202,7 @@ function hideAll() {
   chartext.hide();
   charsel.hide();
   charbiotext.hide();
+  phonefield.hide();
 
   // advtext.hide();
   // advslider.hide();

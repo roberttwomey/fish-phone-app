@@ -34,8 +34,8 @@
             "duration": 0
         },
         "character": {
-            "text": "Select your character:",
-            "next": ["preferences"],
+            "text": "Enter your phone number:",
+            "next": ["pause"],
             "keywords": [""]
         },
         "preferences": {
@@ -49,14 +49,22 @@
             "keywords": ["mike", "check", "test"]
         },
         "pause": {
-          "text": "Wait for your companions to join you",
-          "next": ["path1", "path2", "path3", "path4"],
+          "text": "Enter the phone booth and press button to begin",
+          // "next": ["path1", "path2", "path3", "path4"],
+          "next": ["begin"]
           "keywords": ["pause"]
         },
         "waiting": {
             "text": "Waiting for the experience to begin",
             "next": ["firstsection"],
             "keywords": ["done"]
+        },
+        "begin": {
+          "type": "audio",
+          "audio": "assets/fish02.mp3",
+          "starttime": 0,
+          "duration": 60,
+          "next": ["offboarding"]
         },
         "path1": {
           "type": "audio",

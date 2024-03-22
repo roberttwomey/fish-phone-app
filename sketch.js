@@ -312,8 +312,8 @@ function renderInterface() {
     nextbtn.show();
     nextbtn.html('next');
     // if (bResuming) nextbtn.html("resume");
-    chartext.show();
-    charsel.show();
+    // chartext.show();
+    // charsel.show();
     phonefield.show();
   } else if (thisState == "preferences") {
     nextbtn.show();
