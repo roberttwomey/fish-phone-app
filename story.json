@@ -60,7 +60,7 @@
         },
         "begin": {
           "type": "audio",
-          "audio": "assets/fish02.mp3",
+          "audio": "assets/demoday.mp3",
           "starttime": 0,
           "duration": 60,
           "next": ["offboarding"]
