@@ -36,7 +36,7 @@ function createPauseScreen() {
 
 function createCharSelector() {
     // character text
-  chartext = createP("select your character:");
+  chartext = createP("Enter your phone number:");
   chartext.parent("contents");
   chartext.style("top", "80px");
 
@@ -73,6 +73,7 @@ function createCharSelector() {
   phonefield.changed(phoneEntryEvent);
   phonefield.parent("contents");
   phonefield.style("top", "240px");
+  phonefield.style("margin", "0 auto");
 
   chartext.hide();
   charsel.hide();
