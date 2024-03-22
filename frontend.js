@@ -10,7 +10,7 @@ function createSplashScreen() {
 }
 
 function createPauseScreen() {
-  pausebutton = createButton("WAIT");
+  pausebutton = createButton("BEGIN");
   pausebutton.parent("nextbtn");
   pausebutton.size(160, 40);
   pausebutton.style("bottom", "300px");

@@ -312,7 +312,7 @@ function renderInterface() {
     nextbtn.show();
     nextbtn.html('next');
     // if (bResuming) nextbtn.html("resume");
-    // chartext.show();
+    chartext.show();
     // charsel.show();
     phonefield.show();
   } else if (thisState == "preferences") {
@@ -354,10 +354,11 @@ function renderInterface() {
     startRandomStation();
 
   } else if (story[thisState].type == "audio") {    
-    chartext.html(charsel.value());
+    // chartext.html(charsel.value());
+    chartext.html("Listen")
     chartext.show()
-    charbiotext.html(backstories[charsel.value()]);
-    charbiotext.show();
+    // charbiotext.html(backstories[charsel.value()]);
+    // charbiotext.show();
     
     // calc updated time
     if(bContinueSession) { 
