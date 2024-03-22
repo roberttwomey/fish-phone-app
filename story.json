@@ -1,0 +1,191 @@
+{
+    "showtimes": [ 
+      [2023, 3, 25, 18, 30],
+      [2023, 3, 26, 11, 30],
+      [2023, 3, 26, 12, 30],
+      [2023, 3, 26, 13, 30],
+      [2023, 3, 27, 16, 30],
+      [2023, 3, 27, 17, 30],
+      [2023, 3, 27, 18, 30],
+      [2023, 3, 28, 16, 30],
+      [2023, 3, 28, 17, 30],
+      [2023, 3, 28, 18, 30],
+      [2023, 3, 29, 11, 30],
+      [2023, 3, 29, 12, 30],
+      [2023, 3, 29, 13, 30],
+      [2023, 3, 29, 15, 30],
+      [2023, 3, 29, 16, 30],
+      [2023, 3, 29, 17, 30],
+      [2023, 3, 29, 18, 30],
+      [2023, 3, 30, 11, 30],
+      [2023, 3, 30, 12, 30],
+      [2023, 3, 30, 13, 30],
+      [2023, 3, 30, 15, 30],
+      [2023, 3, 30, 16, 30],
+      [2023, 3, 30, 17, 30],
+      [2023, 3, 30, 18, 30]
+    ],
+    "story": {
+        "splash": {
+            "text": "",
+            "next": ["character"],
+            "keywords": ["splash"]
+        },
+        "character": {
+            "text": "Select your character:",
+            "next": ["preferences"],
+            "keywords": [""]
+        }, 
+        "preferences": {
+            "text": "Select your preferences:",
+            "next": ["mictest"],
+            "keywords": [""]
+        },
+        "mictest": {
+            "text": "Test your microphone.<br><br>Repeat the phrase:<br><br>'My voice is my password'<br>",
+            "next": ["waiting"],
+            "keywords": ["mike", "check", "test"]
+        },
+        "waiting": {
+            "text": "Waiting for the experience to begin",
+            "next": ["onboarding"],
+            "keywords": ["done"]
+        },
+        "finish": {
+            "text": "Now we are done.",
+            "next": ["splash"],
+            "keywords": ["finish", "end", "exit"]
+        }, 
+        "radio": {
+            "type": "text",
+            "text": "HeraKlean Radio",
+            "next": [],
+            "keywords": ["radio"]
+        },
+        "onboarding": {
+            "type": "audio",
+            "audio": "assets/1.mp3",
+            "lat": 32.70444346073959,
+            "lng": -117.16358440260593,
+            "radius": 30,
+            "next": ["eucalyptus"]
+          },
+          "eucalyptus": {
+            "type": "audio",
+            "audio": "assets/2.mp3",
+            "lat": 32.70428740548589,
+            "lng": -117.16348707675935,
+            "radius": 30,
+            "next": ["resonate"]
+          },
+          "resonate": {
+            "type": "audio",
+            "audio": "assets/3.mp3",
+            "lat": 32.704136938772486,
+            "lng": -117.163408143133,
+            "radius": 30,
+            "label": "resonate",
+            "sounds": ["cranes.m4a"],
+            "next": ["boats"]
+          },
+          "boats": {
+            "type": "audio",
+            "audio": "assets/4.mp3",
+            "lat": 32.704165742420855,
+            "lng": -117.16306047783291,
+            "radius": 30,
+            "sounds": ["cattle_eating.mp3", "cowdrone.m4a"],
+            "next": ["history1", "manure1"],
+            "nexttext": ["Option A: History (White Flag)", "Option B: Manure (Purple Flag)"]
+          },
+          "history1": {
+            "type": "audio",
+            "audio": "assets/5.mp3",
+            "lat": 32.70381386410789,
+            "lng": -117.1627945560613,
+            "radius": 30,
+            "sounds": ["brook.mp3"],
+            "next": ["refrigeration", "manure2"],
+            "nexttext": ["Option A: Stable Refrigeration (Black Flag)", "Option B: Manure (Purple Flag)"]
+          },
+          "manure1": { 
+            "type": "audio",
+            "audio": "assets/6.mp3",
+            "lat": 32.70364233121849, 
+            "lng": -117.16295037940655,
+            "radius": 30,
+            "next": ["refrigeration", "history2"],
+            "nexttext": ["Option A: Stable Refrigeration (Black Flag)", "Option B: History (White Flag)"]
+          },
+          "manure2": { 
+            "type": "audio",
+            "audio": "assets/6.mp3",
+            "lat": 32.70364233121849, 
+            "lng": -117.16295037940655,
+            "radius": 30,
+            "next": ["refrigeration"],
+            "nexttext": ["Proceed to Stable Refrigeration (Black Flag)"]
+          },
+          "history2": {
+            "type": "audio",
+            "audio": "assets/5.mp3",
+            "lat": 32.70381386410789,
+            "lng": -117.1627945560613,
+            "radius": 30,
+            "sounds": ["brook.mp3"],
+            "next": ["refrigeration"],
+            "nexttext": ["Proceed to Stable Refrigeration (Black Flag)"]
+          },
+          "refrigeration": {             
+            "type": "audio",
+            "audio": "assets/7.mp3",
+            "lat": 32.703436405162336,
+            "lng": -117.16306584225097,
+            "radius": 30,
+            "next": ["pedicab", "tendthegrass"],
+            "nexttext": ["Option A: Pedicab (look for it!)",  "Option B: Tend the Grass (Orange Flag)"]
+          },
+          "tendthegrass": {
+            "type": "audio",
+            "audio": "assets/8.mp3", 
+            "lat": 32.703719, 
+            "lng": -117.163135,
+            "radius": 30,
+            "next": ["stableself"]
+          },
+          "stableself": { 
+            "type": "audio",
+            "audio": "assets/9.mp3",
+            "lat": 32.703923,
+            "lng": -117.16313,
+            "radius": 30,
+            "next": ["finalresonate"]
+          },
+          "finalresonate": {
+            "type": "audio",
+            "audio": "assets/10.mp3", 
+            "lat": 32.703993,
+            "lng": -117.163292,
+            "radius": 30,
+            "next": ["stableswag"]
+          },
+          "stableswag": {
+            "type": "audio",
+            "audio": "assets/11.mp3", 
+            "lat": 32.704192,
+            "lng": -117.163595,
+            "radius": 30,
+            "next": ["radio", "offboarding"]
+          },
+          "pedicab": {
+            "type": "audio",
+            "audio": "assets/8x.mp3",
+            "next": ["stableself"]
+          },
+          "offboarding": {
+            "text": "Proceed to offboarding, or stay to listen to the collective widsom.",
+            "next": [""],
+            "keywords": [""]
+          }
+    }
+}
