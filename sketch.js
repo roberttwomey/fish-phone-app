@@ -30,6 +30,7 @@ let vid;
 // screen 1
 let charsel, seltext;
 let chartext, charbiotext;
+let phonefield;
 
 // screen 2
 let advslider, advtext;
@@ -216,6 +217,13 @@ function charSelectEvent() {
   // background(200);
   console.log('Your character is ' + myChar + '!');
   storeItem('myCharacter', myChar);
+}
+
+function phoneEntryEvent() {
+  let myPhone = phonefield.value();
+  // background(200);
+  console.log('Your phone number is ' + myPhone + '!');
+  storeItem('myPhone', myPhone);
 }
 
 function advanceInterface() {
