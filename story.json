@@ -1,0 +1,52 @@
+{
+    "splash": {
+        "text": "",
+        "next": ["character"],
+        "keywords": ["splash"]
+    },
+    "character": {
+        "text": "Select your character:",
+        "next": ["preferences"],
+        "keywords": [""]
+    }, 
+    "preferences": {
+        "text": "Select your preferences:",
+        "next": ["mictest"],
+        "keywords": [""]
+    },
+    "mictest": {
+      "text": "Test your microphone.<br> Say done when complete.",
+      "next": ["waiting"],
+      "keywords": ["mike", "check", "test"]
+    },
+    "waiting": {
+      "text": "Waiting for the experience to begin",
+      "next": ["start"],
+      "keywords": ["done"]
+    },
+    "start": {
+      "text": "This is the beginning of the story. Choose between options 2 or 3",
+      "next": ["2", "3"],
+      "keywords": ["start", "beginning"]
+    },
+    "2": {
+      "text": "Here we are at option 2",
+      "next": ["finish", "3"],
+      "keywords": ["two", "2"]
+    },
+    "3": {
+      "text": "Here we are at option 3",
+      "next": ["finish", "2"],
+      "keywords": ["three", "3"]
+    },
+    "finish": {
+      "text": "Now we are done.",
+      "next": ["splash"],
+      "keywords": ["finish", "end", "exit"]
+    }, 
+    "radio": {
+        "text": "HeraKlean Radio",
+        "next": [],
+        "keywords": ["radio"]
+    }
+  }
