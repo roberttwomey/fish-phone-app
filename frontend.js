@@ -7,10 +7,19 @@ function createSplashScreen() {
   // nextbtn.style("top", "50vh");
   nextbtn.style("margin", "0 auto");
   nextbtn.mousePressed(advanceInterface);
+
+  resetbtn = createButton("reset");
+  resetbtn.parent("nextbtn");
+  resetbtn.size(160, 40);
+  resetbtn.style("position", "absolute");
+  resetbtn.style("bottom", "0");
+  resetbtn.style("right", "20px");
+  resetbtn.mousePressed(resetStorage);
+  resetbtn.hide();
 }
 
 function createPauseScreen() {
-  pausebutton = createButton("BEGIN");
+  pausebutton = createButton("begin");
   pausebutton.parent("nextbtn");
   pausebutton.size(160, 40);
   pausebutton.style("bottom", "300px");
@@ -37,9 +46,16 @@ function createPauseScreen() {
 function createCharSelector() {
     // character text
   chartext = createP("Enter your phone number:");
-  chartext.parent("contents");
-  chartext.style("top", "80px");
+  chartext.style("position", "relative");
+  chartext.style("top", "25vh");
+  // timertext.style("font-size", "128pt");
+  // timertext.style("color", "#f0f0f0");
+  // timertext.style("color", "#bfe5e5");
 
+  chartext.parent("contents");
+  chartext.style("top", "200px");
+
+  // NOT USED -- DELETE
   charbiotext = createP("This is your story.");
   charbiotext.parent("contents");
   charbiotext.style("top", "120px");
@@ -70,9 +86,10 @@ function createCharSelector() {
   
   // phone field
   phonefield = createInput();
-  phonefield.changed(phoneEntryEvent);
+  phonefield.changed(sendPhoneData);
   phonefield.parent("contents");
-  phonefield.style("top", "240px");
+  phonefield.style("position", "relative");
+  phonefield.style("top", "27vh");
   phonefield.style("margin", "0 auto");
 
   chartext.hide();

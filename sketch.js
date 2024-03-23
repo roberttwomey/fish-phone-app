@@ -18,11 +18,19 @@ let bContinueSession = false;
 let lastState;
 let lastTimeStart;
 
+let uid;
+let phoneNum;
+
 // composition
 let storyfile = "story.json";
 let jsoncontents;
 let story; // structure for story from JSON
 let showtimes; 
+
+// sockets for server communicaiton
+let socket;
+let serverURL = 'http://localhost:80';
+// let serverURL ='http://app.radio-play.net:8080';
 
 // screen 0
 let vid;
@@ -80,7 +88,7 @@ function setup() {
   noCanvas();
 
   // create a unique-ish ID, from https://stackoverflow.com/a/53116778  
-  let uid = getItem('uid');
+  uid = getItem('uid');
   if (uid === null) {
     uid = Date.now().toString(36) + Math.floor(Math.pow(10, 12) + Math.random() * 9*Math.pow(10, 12)).toString(36);
     console.log("new uid");
@@ -88,6 +96,10 @@ function setup() {
   }
   console.log("---", uid);
 
+  // setup socket and callback
+  socket = io.connect(serverURL);
+  socket.on('phone', (bSuccess) => { notifySuccess(bSuccess)});
+    
   thisState = "splash";
   
   // screen 0
@@ -124,7 +136,7 @@ function setup() {
 
   // check last state position
   lastState = getItem("state");
-  console.log("stored state:", lastState);
+  console.log("retrieving stored state:", lastState);
   if (lastState in story) {
     if (story[lastState].type == "audio") {
       // // check previous starttime, are we resuming? and if so, at what point?
@@ -153,11 +165,32 @@ function setup() {
   // renderInterface();
 }
 
+// server communication
+function notifySuccess(bSuccess) {
+  console.log(`sending phone to the server was ${bSuccess}`)
+}
+
+function sendPhoneData() {
+  // store item from field
+  phoneNum = phonefield.value();
+  storeItem('myPhone', phoneNum);
+  
+  // send data to server
+  const phoneData = {
+    uid: uid,
+    phoneNum: phoneNum
+  }
+
+  socket.emit('phone', phoneData);
+  console.log(`sent phone number ${phoneNum} for uid ${uid}`);
+}
+
+// local storage
 function resetStorage() {
   clearStorage();
   console.log("resetStorage(): cleared resume data from storage...");
   resetbtn.hide();
-  resetNextStyle();
+  // resetNextStyle();
 
   thisState = "splash";
   bResuming = false;
@@ -219,15 +252,8 @@ function charSelectEvent() {
   storeItem('myCharacter', myChar);
 }
 
-function phoneEntryEvent() {
-  let myPhone = phonefield.value();
-  // background(200);
-  console.log('Your phone number is ' + myPhone + '!');
-  storeItem('myPhone', myPhone);
-}
-
 function advanceInterface() {
-  console.log("advanceInterface()");
+  // console.log("advanceInterface()");
   // if (Object.keys(audioFiles).length <= 0) {
   //   loadAudioFiles();
   // }
@@ -302,7 +328,7 @@ function advanceInterface() {
 function renderInterface() {
   // clear previous layers
   hideAll();
-  console.log("renderInterface()");
+  // console.log("renderInterface()");
   // display appropriate interface
   if (thisState == "splash") {
     vid.show();

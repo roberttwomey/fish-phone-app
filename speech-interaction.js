@@ -159,7 +159,7 @@ function startListening() {
 }
 
 function stopListening() {
-  console.log("stopListening()");
+  // console.log("stopListening()");
   speechRec.stop();
   bListening = false;
   recbtn.style('background-color', '#f0f0f0');

@@ -19,12 +19,12 @@ sudo apt-get install nodejs npm
 
 install modules: 
 
-```npm install dotenv openai socket.io http-server pm2```
+```npm install dotenv twilio socket.io pm2```
 
 # Usage
 
 Run the server
-```sudo node heraklean-server.js```
+```sudo node fish-server.js```
 
 ## Better usage
 
@@ -36,17 +36,17 @@ with pm2
 
 Start the app:
 ```
-sudo pm2 start heraklean-server.js
+sudo pm2 start fish-server.js
 ```
 
 Inspect the log:
 ```
-sudo pm2 log heraklean-server.js
+sudo pm2 log fish-server.js
 ```
 
-Stop the writing tool:
+Stop the fish phone booth:
 ```
-sudo pm2 stop heraklean-server.js
+sudo pm2 stop fish-server.js
 ```
 
 
@@ -55,12 +55,12 @@ sudo pm2 stop heraklean-server.js
 
 ### Clone repository
 
-```git clone https://github.com/roberttwomey/heraklean-app/```
+```git clone https://github.com/roberttwomey/fish-phone-app/```
 
 
 ### Create conda environment (local macos)
 
-```conda create --name heraklean```
+```conda create --name fish```
 
 ```conda install -c conda-forge nodejs```
 
@@ -72,50 +72,14 @@ sudo pm2 stop heraklean-server.js
 
 ## Usage
 
-```node stream-test.js```
+Start server: 
 
+```node fish-server.js```
 
+Open browser (listening on port 80):
 
+```https://localhost```
 
-# ----- OLD STUFF -----
-
-
-## Usage
-
-### Run it from the command line with node.js
-
-**setup**:
-`npm install http-server -g`
-`http-server` 
-
-***Visit in Browser***
-
-open `localhost:8080` in Safari (speechRec isn't working in edge)
-
-### Node app with pm2
-
-```
-npm install pm2 -g
-npm install -g express
-```
-
-
-### Running with pm2
-
-Start the app:
-```
-pm2 start writing-tool.js
-```
-
-Inspect the log:
-```
-pm2 log writing-tool.js
-```
-
-Stop the writing tool:
-```
-pm2 stop writing-tool.js
-```
 
 ## References
 - Web audio streaming with node.js https://www.npmjs.com/package/stream-player
