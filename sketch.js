@@ -170,9 +170,8 @@ function notifySuccess(bSuccess) {
   console.log(`sending phone to the server was ${bSuccess}`)
 }
 
-function sendPhoneData() {
+function sendPhoneData(phoneNum) {
   // store item from field
-  phoneNum = phonefield.value();
   storeItem('myPhone', phoneNum);
   
   // send data to server
@@ -184,6 +183,18 @@ function sendPhoneData() {
   socket.emit('phone', phoneData);
   console.log(`sent phone number ${phoneNum} for uid ${uid}`);
 }
+
+// phone number manipulation
+function validatePhoneNumber(phoneNumberString) {
+  var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+  if (match) {
+    return '+1'+match[1]+match[2]+match[3];
+  }
+  return null;
+}
+
+// console.log(formatPhoneNumber('202 997 3952'));
 
 // local storage
 function resetStorage() {
@@ -267,9 +278,13 @@ function advanceInterface() {
   }
 
   // if we have not selected a character
-  if (thisState == "character" && charsel.value() == "") {
-    // select one randomly
-    charsel.selected(sample(characters));
+  if (thisState == "phonenum") {
+    output = validatePhoneNumber(phonefield.value());
+    if (output) {
+      sendPhoneData(output);
+    } else {
+      return
+    }
   }
 
   // stop speaking and listening, just in case
@@ -334,7 +349,7 @@ function renderInterface() {
     vid.show();
     nextbtn.html("start");
     nextbtn.show();
-  } else if (thisState == "character") {
+  } else if (thisState == "phonenum") {
     nextbtn.show();
     nextbtn.html('next');
     // if (bResuming) nextbtn.html("resume");

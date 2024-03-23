@@ -28,12 +28,12 @@
     "story": {
         "splash": {
             "text": "",
-            "next": ["character"],
+            "next": ["phonenum"],
             "keywords": ["splash"],
             "starttime": 0,
             "duration": 0
         },
-        "character": {
+        "phonenum": {
             "text": "Enter your phone number:",
             "next": ["pause"],
             "keywords": [""]

@@ -23,6 +23,7 @@ const client = require('twilio')(accountSid, authToken);
 //   })
 //   .then((message) => console.log(`sent message (${message.sid}) ${message}`));
 
+// fish audio
 let fish_audio = [
   'mixdown-2track.mp3',
   'newplaytest3.mp3',
@@ -32,20 +33,43 @@ let fish_audio = [
   'whoop.mp3'
   ];
 
-const this_audio = fish_audio.sample();
-const audio_url = `https://roberttwomey.com/downloads/${this_audio}`;
-const this_twiml = `<Response><Play loop=\"10\">${this_audio}</Play></Response>`;
+async function fishPhoneCall(thisUser, delay=2000) {
+  const this_audio = fish_audio[(Math.floor(Math.random() * fish_audio.length))];
+  // console.log(this_audio);
+  const audio_url = `https://roberttwomey.com/downloads/${this_audio}`;
+  const this_twiml = `<Response><Play loop=\"10\">${audio_url}</Play></Response>`;
+  // console.log(this_twiml);
 
-client.calls
-  .create({
-      // url: 'http://demo.twilio.com/docs/voice.xml',
-      record=true,
-      recording_track='dual',
-      twiml=this_twiml,                  
-      to: '+12029973952',
-      from: `${twilioPhone}`
-    })
-  .then(call => console.log(call.sid));
+  console.log(`waiting ${delay} ms`);
+  await new Promise(r => setTimeout(r, delay));
+
+  const elapsed = Date.now() - thisUser.startTime;
+  console.log(`calling ${thisUser.phoneNum} with ${this_audio} at ${elapsed} ms after registering`);
+  
+  client.calls
+    .create({
+        record: true,
+        recording_track: 'dual',
+        twiml: this_twiml,                  
+        to: '+12029973952',
+        from: `${twilioPhone}`
+      })
+    .then(call => console.log(call.sid));
+}
+
+function formatPhoneNumber(phoneNumberString) {
+  var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+  if (match) {
+    return '+1'+match[1]+match[2]+match[3];
+  }
+  return null;
+}
+
+// console.log(formatPhoneNumber('202 997 3952'));
+
+// test
+// fishPhoneCall('+12029973952', 2000);
 
 var server = http.createServer(handleRequest);
 // server.listen(8080);
@@ -118,7 +142,7 @@ io.sockets.on('connection', (socket) => {
       
       // await new Promise(r => setTimeout(r, 2000));
 
-      console.log((Date.now() - thisUser.startTime) + " ms ago");
+      fishPhoneCall(thisUser, 5000);
     });
   }
 );

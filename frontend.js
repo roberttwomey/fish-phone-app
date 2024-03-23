@@ -86,7 +86,7 @@ function createCharSelector() {
   
   // phone field
   phonefield = createInput();
-  phonefield.changed(sendPhoneData);
+  // phonefield.changed(validatePhoneData);
   phonefield.parent("contents");
   phonefield.style("position", "relative");
   phonefield.style("top", "27vh");
