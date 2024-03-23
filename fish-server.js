@@ -23,9 +23,25 @@ const client = require('twilio')(accountSid, authToken);
 //   })
 //   .then((message) => console.log(`sent message (${message.sid}) ${message}`));
 
+let fish_audio = [
+  'mixdown-2track.mp3',
+  'newplaytest3.mp3',
+  'fish01.mp3',
+  'fish02.mp3',
+  'foghorn.mp3',
+  'whoop.mp3'
+  ];
+
+const this_audio = fish_audio.sample();
+const audio_url = `https://roberttwomey.com/downloads/${this_audio}`;
+const this_twiml = `<Response><Play loop=\"10\">${this_audio}</Play></Response>`;
+
 client.calls
   .create({
-      url: 'http://demo.twilio.com/docs/voice.xml',
+      // url: 'http://demo.twilio.com/docs/voice.xml',
+      record=true,
+      recording_track='dual',
+      twiml=this_twiml,                  
       to: '+12029973952',
       from: `${twilioPhone}`
     })
