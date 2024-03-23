@@ -95,6 +95,11 @@ or
 ssh -i "TLP.pem" ubuntu@ec2-54-219-126-173.us-west-1.compute.amazonaws.com
 ```
 
+```bash
+git clone https://github.com/roberttwomey/fish-phone-app/
+```
+NOTE: you need to change the serverURL in sketch.js when running remotely vs. locally.
+
 ## References
 - Web audio streaming with node.js https://www.npmjs.com/package/stream-player
 - 

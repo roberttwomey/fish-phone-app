@@ -57,17 +57,6 @@ async function fishPhoneCall(thisUser, delay=2000) {
     .then(call => console.log(call.sid));
 }
 
-function formatPhoneNumber(phoneNumberString) {
-  var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
-  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-  if (match) {
-    return '+1'+match[1]+match[2]+match[3];
-  }
-  return null;
-}
-
-// console.log(formatPhoneNumber('202 997 3952'));
-
 // test
 // fishPhoneCall('+12029973952', 2000);
 
