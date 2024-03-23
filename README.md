@@ -80,6 +80,20 @@ Open browser (listening on port 80):
 
 ```https://localhost```
 
+## Deploy on AWS
+
+```bash
+cd /Users/rtwomey/radioplay/aws-tlp-demo
+```
+
+```bash
+ssh -i "TLP.pem" ubuntu@app.radio-play.net
+```
+
+or 
+```bash
+ssh -i "TLP.pem" ubuntu@ec2-54-219-126-173.us-west-1.compute.amazonaws.com
+```
 
 ## References
 - Web audio streaming with node.js https://www.npmjs.com/package/stream-player
