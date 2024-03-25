@@ -1,12 +1,11 @@
-# Heraklean App
-interactive sound-walk app
+# Fish Phone Boot
+Prototype for Birch Aquarium / La Jolla Playhouse Project
 
 # Setup
 
 ## Clone repository
 
-```git clone https://github.com/roberttwomey/heraklean-app/```
-
+```git clone https://github.com/roberttwomey/fish-phone-app/```
 
 ## npm Setup
 
