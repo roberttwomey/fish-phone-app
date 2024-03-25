@@ -1,4 +1,4 @@
-# Fish Phone Boot
+# Fish Phone Booth
 Prototype for Birch Aquarium / La Jolla Playhouse Project
 
 # Setup
